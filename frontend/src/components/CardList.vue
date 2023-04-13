@@ -1,10 +1,11 @@
 <template>
-<v-card width="100%" class="mb-6 mt-6" color="rgb(255, 255, 255, 0)">
+<v-card width="100%" class="mb-6 mt-6" color="rgb(255, 255, 255, 0)" elevation="15">
   <v-list>
     <v-list-item>
       <v-list-item-title class="text-h6">{{ title }}</v-list-item-title>
       <v-list-item-action>
         <v-text-field
+          class="text-h6"
           label="Suche..."
           v-model="search"
           @input="filterProcesses()"
