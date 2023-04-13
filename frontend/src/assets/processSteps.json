@@ -1,0 +1,40 @@
+{
+    "steps": [
+        {
+            "message": "Antragsformular digital abgeschickt",
+            "description": "Antragsformular digital abgeschickt",
+            "done": true,
+            "user": true 
+        },
+        {
+            "message": "Antragsformular empfangen",
+            "description": "Antragsformular empfangen",
+            "done": true,
+            "user": false 
+        },
+        {
+            "message": "Step3",
+            "description": "Lorem ipsum dolor sit amet, no nam oblique veritus",
+            "done": false,
+            "user": false 
+        },
+        {
+            "message": "Step4",
+            "description": "Lorem ipsum dolor sit amet, no nam oblique veritus",
+            "done": false,
+            "user": true 
+        },
+        {
+            "message": "Step5",
+            "description": "Lorem ipsum dolor sit amet, no nam oblique veritus",
+            "done": false,
+            "user": false 
+        },
+        {
+            "message": "Step6",
+            "description": "Lorem ipsum dolor sit amet, no nam oblique veritus",
+            "done": true,
+            "user": true 
+        }
+    ]
+}
