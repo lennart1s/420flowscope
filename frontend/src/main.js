@@ -3,6 +3,8 @@ import App from './App.vue';
 import router from './router';
 import store from './store';
 import vuetify from './plugins/vuetify';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import '@mdi/font/css/materialdesignicons.css';
 
 Vue.config.productionTip = false;
 
