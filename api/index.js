@@ -10,6 +10,7 @@ app.use(cors());
 
 app.use('/auth', require('./auth'));
 app.use('/process', require('./process'));
+app.use('/user', require('./user'));
 
 const port = process.env.API_PORT || 7071;
 console.log('Listening on port', port);
