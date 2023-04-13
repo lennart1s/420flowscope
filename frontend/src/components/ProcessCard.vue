@@ -44,12 +44,7 @@ export default {
       return this.notifications === '0' ? 'grey' : 'red';
     },
     privyText() {
-      const { privies } = this.process;
-      let string = privies[0].name;
-      if (privies.length > 1) {
-        string += ', ...';
-      }
-      return string;
+      return this.process.privies.map((privy) => privy.name).join(', ');
     },
     notifications() {
       // if not turned into string, the badge will render no text.
@@ -64,6 +59,3 @@ export default {
   },
 };
 </script>
-
-<style>
-</style>
