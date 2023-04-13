@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "type": "arbitration",
+    "name": "Kompensation: Flugausfall MH370/MAS370",
+    "privies": [
+      {
+        "id": "max.mustermann@mail.de",
+        "role": "applicant"
+      },
+      {
+        "id": "lawfirm@mail.de",
+        "role": "company"
+      }
+    ]
+  }
+]
