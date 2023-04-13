@@ -7,20 +7,24 @@
                 </v-icon>
                     {{ info.message }}
                 </v-card-title>
-            <v-card-text class="white text--primary" id="cardText">
-                <p>{{ getDateTime }}</p>
-                <!-- eslint-disable-next-line max-len -->
-                <v-btn :color="info.done ? '#68d88b' : 'red'"  @click="clicked=!clicked" class="mx-0" outlined>
-                    {{ getButtonLabel }}
-                </v-btn>
-                <div v-if="clicked">
-                  <v-file-input
+            <v-card-text class="text--primary" id="cardText">
+              <p>{{ getDateTime }}</p>
+              <!-- eslint-disable-next-line max-len -->
+              <v-btn :color="info.done ? '#68d88b' : 'red'"  @click="clicked=!clicked" class="mx-0" outlined>
+                {{ getButtonLabel }}
+              </v-btn>
+            </v-card-text>
+            <div id="cardTextBox">
+              <v-expand-transition>
+                <div v-show="clicked">
+                  <v-file-input id="fileInput"
                   v-if="info.alert"
                   label="File input"
                   truncate-length="15"
                   ></v-file-input>
                 </div>
-            </v-card-text>
+              </v-expand-transition>
+            </div>
         </v-card>
     </div>
 </template>
@@ -61,5 +65,9 @@ export default {
 <style scoped>
 #cardText {
   padding-top: 5px;
+  background-color: white;
+}
+#fileInput {
+  color:black;
 }
 </style>
