@@ -3,18 +3,31 @@
     "firstname": "Max",
     "lastname": "Mustermann",
     "email": "max.mustermann@mail.de",
-    "password": "123456"
+    "password": "123456",
+    "birthday": "1980-01-01",
+    "personnel number": "123456",
+    "street": "Muster Str.",
+    "house number": "80",
+    "zip code": "12345 Musterland"
   },
   "erika.mustermann@mail.de": {
     "firstname": "Erika",
     "lastname": "Mustermann",
     "email": "erika.mustermann@mail.de",
-    "password": "123456"
+    "password": "123456",
+    "birthday": "1980-01-01",
+    "personnel number": "111111",
+    "street": "Stahnsdorfer Str.",
+    "house number": "138C",
+    "zip code": "14482 Potsdam"
   },
   "lawfirm@mail.de": {
     "firstname": "Andre",
     "lastname": "Geldgeil",
     "email": "lawfirm@mail.de",
-    "password": "123456"
+    "password": "123456",
+    "street": "Stahnsdorfer Str.",
+    "house number": "140A",
+    "zip code": "14482 Potsdam"
   }
 }

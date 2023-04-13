@@ -11,15 +11,16 @@ const routes = [
     name: 'profile',
     component: ProfileView,
     props: {
-      user: {
-        'first name': 'Max',
-        'last name': 'Mustermann',
-        birthday: '1980-01-01',
-        'personnel number': '1234567',
-        street: 'Stahnsdorfer Str.',
-        'house number': '140A',
-        'zip code': '14482',
-      },
+      // user: {
+      //   'first name': 'Max',
+      //   'last name': 'Mustermann',
+      //   birthday: '1980-01-01',
+      //   'personnel number': '1234567',
+      //   street: 'Stahnsdorfer Str.',
+      //   'house number': '140A',
+      //   'zip code': '14482',
+      // },
+      user: 'max.mustermann@mail.de',
     },
   },
   {

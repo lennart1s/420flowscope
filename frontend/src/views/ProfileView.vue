@@ -13,15 +13,15 @@
           </v-row>
           <v-row>
             <v-spacer/>
-            {{ `${user['first name']} ${user['last name']}` }}
+            {{ `${currentUser['firstname']} ${currentUser['lastname']}` }}
             <v-spacer/>
           </v-row>
           <profile-value
             v-for="valueName in
-              ['birthday', 'personnel number', 'street', 'house number', 'zip code']"
+              ['email', 'birthday', 'personnel number', 'street', 'house number', 'zip code']"
             :key="valueName"
             :value-name="capitalizeSentence(valueName)"
-            :value="user[valueName]"
+            :value="currentUser[valueName]"
           />
         <v-row>
         <v-spacer/>
@@ -37,12 +37,21 @@
 </template>
 
 <script>
+import users from '../../../db/users.json';
 import ProfileValue from '../components/ProfileValue.vue';
 
 export default {
   components: { ProfileValue },
   name: 'ProfileView',
   props: ['user'],
+  data: () => ({
+    userData: users,
+  }),
+  computed: {
+    currentUser() {
+      return this.userData[this.user];
+    },
+  },
   methods: {
     capitalizeSentence: (string) => {
       const words = string.split(' ');
