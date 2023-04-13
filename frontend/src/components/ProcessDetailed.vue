@@ -7,7 +7,7 @@
                 :left="step.user"
                 :icon="'mdi-numeric-' + (index+1)"
               >
-              <process-card :info="step"/>
+              <process-step-card :info="step"/>
               </v-timeline-item>
             </div>
             <!--<v-timeline-item>
@@ -28,13 +28,13 @@
 
 <script>
 import json from '../assets/processSteps.json';
-import ProcessCard from './ProcessCard.vue';
+import ProcessStepCard from './ProcessStepCard.vue';
 import ComChat from './ComChat.vue';
 
 export default {
   components: {
     ComChat,
-    ProcessCard,
+    ProcessStepCard,
   },
   data() {
     return {
