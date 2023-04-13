@@ -6,9 +6,13 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     profile: null,
+    done_processes: null,
+    pending_processes: null,
   },
   getters: {
     profile: (state) => state.profile,
+    done_processes: (state) => state.done_processes,
+    ongoing_processes: (state) => state.ongoing_processes,
   },
   mutations: {
   },
@@ -35,6 +39,40 @@ export default new Vuex.Store({
         return profile;
       } catch (e) {
         state.profile = null;
+        return null;
+      }
+    },
+    async pendingProcesses({ state }) {
+      try {
+        const resp = await fetch('http://localhost:7071/process', {
+          headers: { authorization: state.profile.email, status: 'pending' },
+        });
+        if (resp.status !== 200) {
+          state.pending_processes = null;
+          return null;
+        }
+        const processes = await resp.json();
+        state.pending_processes = processes;
+        return processes;
+      } catch (e) {
+        state.pending_processes = null;
+        return null;
+      }
+    },
+    async doneProcesses({ state }) {
+      try {
+        const resp = await fetch('http://localhost:7071/process', {
+          headers: { authorization: state.profile.email, status: 'done' },
+        });
+        if (resp.status !== 200) {
+          state.done_processes = null;
+          return null;
+        }
+        const processes = await resp.json();
+        state.done_processes = processes;
+        return processes;
+      } catch (e) {
+        state.done_processes = null;
         return null;
       }
     },

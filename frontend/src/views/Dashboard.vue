@@ -2,10 +2,10 @@
   <v-container fluid>
     <v-list>
       <v-list-item>
-        <CardList stage="ongoing" title="Offene Prozesse"></CardList>
+        <CardList stage="pending" title="Offene Prozesse"></CardList>
       </v-list-item>
       <v-list-item>
-        <CardList stage="finished" title="Beendete Prozesse"></CardList>
+        <CardList stage="done" title="Beendete Prozesse"></CardList>
       </v-list-item>
     </v-list>
   </v-container>

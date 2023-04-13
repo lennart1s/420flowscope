@@ -33,7 +33,7 @@ router.get('/:id?', eguard(async (req, res) => {
     } else if (status === 'pending') {
       filtered = processes.filter((p) => p.step < p.num_steps);
     }
-    res.json(filtered).send();
+    res.json(filtered);
     return;
   }
 

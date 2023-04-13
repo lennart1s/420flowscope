@@ -53,8 +53,8 @@ export default {
   },
   methods: {
     openProcess() {
-      console.log('button clicked');
       // TO DO: IMPLEMENT
+      this.$router.push('/');
     },
   },
 };

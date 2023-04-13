@@ -24,6 +24,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
 import ProcessCard from './ProcessCard.vue';
 
 export default {
@@ -49,6 +50,7 @@ export default {
     },
   },
   methods: {
+    ...mapActions(['pendingProcesses', 'doneProcesses']),
     filterProcesses() {
       if (this.search === undefined || this.search === '') {
         this.filteredProcesses = this.processes;
@@ -63,24 +65,12 @@ export default {
       }
       this.filteredProcesses = filtered;
     },
-    pullProcesses() {
-      this.processes = [
-        {
-          id: 'gaylord fucker',
-          privies: [
-            { id: 1, role: 'badasf', name: 'Bürger' },
-            { id: 2, role: 'Chef', name: 'Staat' },
-          ],
-          name: 'Test123',
-          type: 'Typ',
-          date: '11.09.2001',
-          status: {
-            status: 'open',
-            numberOfSteps: 10,
-            currentStep: 4,
-          },
-        },
-      ];
+    async pullProcesses() {
+      if (this.stage === 'done') {
+        this.processes = await this.doneProcesses();
+      } else if (this.stage === 'pending') {
+        this.processes = await this.pendingProcesses();
+      }
     },
   },
   mounted() {
