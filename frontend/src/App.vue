@@ -21,7 +21,7 @@
           </v-btn>
         </template>
         <v-list>
-          <v-list-item to="/settings">
+          <v-list-item to="/profile">
             <v-list-item-title>
               <v-icon class="mr-2">mdi-cog</v-icon>
               Einstellungen
