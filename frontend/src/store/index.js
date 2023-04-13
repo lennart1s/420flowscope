@@ -12,7 +12,7 @@ export default new Vuex.Store({
   getters: {
     profile: (state) => state.profile,
     done_processes: (state) => state.done_processes,
-    ongoing_processes: (state) => state.ongoing_processes,
+    pending_processes: (state) => state.pending_processes,
   },
   mutations: {
   },
@@ -45,9 +45,10 @@ export default new Vuex.Store({
     async pendingProcesses({ state }) {
       try {
         const resp = await fetch('http://localhost:7071/process', {
-          headers: { authorization: state.profile.email, status: 'pending' },
+          headers: { status: 'pending' },
         });
         if (resp.status !== 200) {
+          console.log(resp.status);
           state.pending_processes = null;
           return null;
         }
@@ -62,7 +63,7 @@ export default new Vuex.Store({
     async doneProcesses({ state }) {
       try {
         const resp = await fetch('http://localhost:7071/process', {
-          headers: { authorization: state.profile.email, status: 'done' },
+          headers: { status: 'done' },
         });
         if (resp.status !== 200) {
           state.done_processes = null;

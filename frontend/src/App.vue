@@ -1,12 +1,12 @@
 <template>
-  <v-app>
+  <v-app id="app">
     <v-app-bar
       app
       color="primary"
       dark
     >
       <!-- ggf noch loading icon + skeleton loading-->
-      <span class="text-h6">420flowscope</span>
+      <v-btn class="text-h6" plain to="/">420flowscope</v-btn>
       <v-spacer></v-spacer>
       <v-menu>
         <template v-slot:activator="{ on, attrs }">
@@ -36,7 +36,7 @@
         </v-list>
       </v-menu>
     </v-app-bar>
-    <v-main>
+    <v-main color="rgb(255, 255, 255, 0.88)">
       <router-view/>
     </v-main>
   </v-app>
@@ -51,3 +51,9 @@ export default {
   }),
 };
 </script>
+
+<style>
+#app {
+  background-image: linear-gradient(rgba(0, 0, 100, 255), white);
+}
+</style>

@@ -1,5 +1,5 @@
 <template>
-<v-card width="100%" class="mb-6 mt-6">
+<v-card width="100%" class="mb-6 mt-6" color="rgb(255, 255, 255, 0)">
   <v-list>
     <v-list-item>
       <v-list-item-title class="text-h6">{{ title }}</v-list-item-title>
@@ -71,11 +71,11 @@ export default {
       } else if (this.stage === 'pending') {
         this.processes = await this.pendingProcesses();
       }
+      this.filteredProcesses = this.processes;
     },
   },
   mounted() {
     this.pullProcesses();
-    this.filteredProcesses = this.processes;
   },
 };
 </script>

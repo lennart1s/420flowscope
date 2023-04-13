@@ -1,10 +1,10 @@
 <template>
   <v-container fluid>
-    <v-list>
-      <v-list-item>
+    <v-list color="rgb(255, 255, 255, 0)">
+      <v-list-item color="rgb(255, 255, 255, 0.88)">
         <CardList stage="pending" title="Offene Prozesse"></CardList>
       </v-list-item>
-      <v-list-item>
+      <v-list-item color="rgb(255, 255, 255, 0.88)">
         <CardList stage="done" title="Beendete Prozesse"></CardList>
       </v-list-item>
     </v-list>
