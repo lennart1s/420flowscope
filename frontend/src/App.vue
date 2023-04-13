@@ -48,7 +48,6 @@ export default {
   name: 'App',
 
   data: () => ({
-    dropdown: false,
   }),
 };
 </script>

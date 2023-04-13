@@ -12,7 +12,7 @@
     </v-list-item>
     <v-divider></v-divider>
     <v-list-item>
-      <v-list-item-title>Blablaba</v-list-item-title>
+      <v-list-item-title>Insert Card Component</v-list-item-title>
     </v-list-item>
   </v-list>
 </v-card>
@@ -21,7 +21,16 @@
 <script>
 export default {
   name: 'CardList',
-  props: ['stage', 'title'],
+  props: {
+    stage: {
+      type: String,
+      required: true,
+    },
+    title: {
+      type: String,
+      required: true,
+    },
+  },
 };
 </script>
 

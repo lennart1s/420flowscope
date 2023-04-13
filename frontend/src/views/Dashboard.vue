@@ -17,7 +17,9 @@ import CardList from '../components/CardList.vue';
 
 export default {
   name: 'DashboardView',
-  components: { CardList },
+  components: {
+    CardList,
+  },
 };
 
 </script>
