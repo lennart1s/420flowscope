@@ -1,7 +1,7 @@
 <template>
     <div id="frame">
         <v-timeline id="timeline">
-            <div v-for="(step,index) in processSteps" :key="index">
+            <div v-for="(step,index) in getProcessSteps" :key="index">
               <v-timeline-item
                 :color="step.done ? '#68d88b' : 'red'"
                 :left="step.user"
@@ -20,35 +20,30 @@
                 Test3
             </v-timeline-item>-->
         </v-timeline>
-        <div id="chatFrame">
+        <!-- <div id="chatFrame">
             <com-chat/>
-        </div>
+        </div> -->
     </div>
 </template>
 
 <script>
-import json from '../assets/processSteps.json';
 import ProcessStepCard from './ProcessStepCard.vue';
-import ComChat from './ComChat.vue';
 
 export default {
   components: {
-    ComChat,
     ProcessStepCard,
   },
   data() {
     return {
-      processSteps: json.steps,
+      processNr: this.$store.getters.process.num_steps,
+      processSteps: this.$store.getters.process.steps,
     };
   },
-  /* methods: {
-    getStepDate: function (step) {
-      console.log(step.time);
-      // eslint-disable-next-line no-prototype-builtins
-      if (step.hasOwnProperty('time')) return (new Date(step.time).toLocaleDateString());
-      return '';
+  computed: {
+    getProcessSteps() {
+      return this.$store.getters.process.steps;
     },
-  }, */
+  },
 };
 </script>
 

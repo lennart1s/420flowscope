@@ -54,6 +54,7 @@ export default {
 
 <style>
 #app {
-  background-image: linear-gradient(rgba(0, 0, 100, 255), white);
+  /* background-image: linear-gradient(rgba(0, 0, 100, 255), white);*/
+  background-color: #F7F3F3;
 }
 </style>

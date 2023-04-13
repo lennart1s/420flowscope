@@ -6,15 +6,20 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     profile: null,
+    process: null,
     done_processes: null,
     pending_processes: null,
   },
   getters: {
     profile: (state) => state.profile,
+    process: (state) => state.process,
     done_processes: (state) => state.done_processes,
     pending_processes: (state) => state.pending_processes,
   },
   mutations: {
+    setProcess(state, newProcess) {
+      state.process = newProcess;
+    },
   },
   actions: {
     async login({ state }, { email, password }) {

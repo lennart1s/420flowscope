@@ -53,8 +53,10 @@ export default {
   },
   methods: {
     openProcess() {
-      // TO DO: IMPLEMENT
-      this.$router.push('/');
+      console.log('button clicked');
+      // TODO: IMPLEMENT
+      this.$store.commit('setProcess', this.process);
+      this.$router.push({ path: 'inspect' });
     },
   },
 };
