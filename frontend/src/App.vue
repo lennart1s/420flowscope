@@ -40,15 +40,71 @@
       <router-view/>
     </v-main>
   </v-app>
+  <ApplicationForm name="Baugenehmigung"
+    :data="array" style="display: flex; justify-content: center"/>
 </template>
 
 <script>
+import ApplicationForm from '@/components/ApplicationForm.vue';
 
 export default {
   name: 'App',
 
   data: () => ({
+    array: [
+      {
+        type: 'String',
+        name: 'kurze Beschreibung des Vorfalls',
+        required: true,
+        dependentOn: '',
+      },
+      {
+        type: 'String',
+        name: 'Name',
+        required: true,
+        dependentOn: 'Antrag für jemand anderen',
+      },
+      {
+        type: 'file',
+        name: 'Name',
+        required: true,
+        dependentOn: 'Antrag für jemand anderen',
+      },
+      {
+        type: 'String',
+        name: 'Firma',
+        required: true,
+        dependentOn: '',
+      },
+      {
+        type: 'date',
+        name: 'Datum des Vorfalls',
+        required: false,
+        dependentOn: '',
+      },
+      {
+        type: 'checkbox',
+        name: 'Antrag für jemand anderen',
+        required: true,
+        dependentOn: '',
+      },
+      {
+        type: 'String',
+        name: 'Vorname',
+        required: true,
+        dependentOn: 'Antrag für jemand anderen',
+      },
+      {
+        type: 'date',
+        name: 'vorraussichtliches Enddatum',
+        required: true,
+        dependentOn: '',
+      },
+    ],
   }),
+  components: {
+    ApplicationForm,
+  },
 };
 </script>
 
