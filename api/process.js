@@ -24,9 +24,16 @@ router.get('/types/:typeId?', eguard(async (req, res) => {
 
 router.get('/:id?', eguard(async (req, res) => {
   const { id } = req.params;
-
+  
   if (!id) {
-    res.json(processes).send();
+    const { status } = req.query;
+    let filtered = JSON.parse(JSON.stringify(processes));
+    if (status === 'done') {
+      filtered = processes.filter((p) => p.step === p.num_steps);
+    } else if (status === 'pending') {
+      filtered = processes.filter((p) => p.step < p.num_steps);
+    }
+    res.json(filtered).send();
     return;
   }
 

@@ -12,6 +12,25 @@
         "id": "lawfirm@mail.de",
         "role": "company"
       }
-    ]
+    ],
+    "num_steps": 5,
+    "step": 5
+  },
+  {
+    "id": "2",
+    "type": "arbitration",
+    "name": "Kompensation: awawda",
+    "privies": [
+      {
+        "id": "max.mustermann@mail.de",
+        "role": "applicant"
+      },
+      {
+        "id": "lawfirm@mail.de",
+        "role": "company"
+      }
+    ],
+    "num_steps": 5,
+    "step": 3
   }
 ]
