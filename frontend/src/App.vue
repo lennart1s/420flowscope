@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app id="app">
     <v-main>
       <router-view/>
     </v-main>
@@ -15,3 +15,9 @@ export default {
   }),
 };
 </script>
+
+<style>
+#app {
+  background-image: linear-gradient(rgba(0, 0, 100, 255) , white);
+}
+</style>

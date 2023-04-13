@@ -52,7 +52,6 @@ export default {
       return string;
     },
     notifications() {
-      // if not turned into string, the badge will render no text.
       return this.process.status.currentStep - this.previousStatus;
     },
   },
