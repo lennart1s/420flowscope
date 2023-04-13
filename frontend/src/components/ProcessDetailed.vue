@@ -1,27 +1,14 @@
 <template>
     <div id="frame">
         <v-timeline>
-            <li v-for="(step,index) in processSteps" :key="index">
+            <div v-for="(step,index) in processSteps" :key="index">
               <v-timeline-item
                 :color="step.done ? '#68d88b' : 'red'"
                 :left="step.user"
               >
-                <v-card :color="step.done ? '#68d88b' : 'red'" dark>
-                  <v-card-title class="text-h6">
-                    {{ step.message }}
-                    <!-- <v-icon size="64">
-                      mdi-alert
-                    </v-icon> -->
-                  </v-card-title>
-                <v-card-text class="white text--primary">
-                  <p>{{ step.description }}</p>
-                  <v-btn :color="step.done ? '#68d88b' : 'red'" class="mx-0" outlined>
-                    See more
-                  </v-btn>
-                </v-card-text>
-                </v-card>
+              <process-card :info="step"/>
               </v-timeline-item>
-            </li>
+            </div>
             <!--<v-timeline-item>
                 Test1
             </v-timeline-item>
@@ -37,18 +24,29 @@
 
 <script>
 import json from '../assets/processSteps.json';
+import ProcessCard from './ProcessCard.vue';
 
 export default {
+  components: { ProcessCard },
   data() {
     return {
       processSteps: json.steps,
     };
   },
+  /* methods: {
+    getStepDate: function (step) {
+      console.log(step.time);
+      // eslint-disable-next-line no-prototype-builtins
+      if (step.hasOwnProperty('time')) return (new Date(step.time).toLocaleDateString());
+      return '';
+    },
+  }, */
 };
 </script>
 
 <style scoped>
 #frame {
-    width: 70%
+    width: 70%;
+    padding-left: 20px;
 }
 </style>
