@@ -2,15 +2,19 @@
   <div class="wrapper">
     <p>Deine Mudd</p>
     <div ref="capture" class="capture"></div>
+    <CommentBubble></CommentBubble>
   </div>
 </template>
 
 <script>
 import html2canvas from 'html2canvas';
 
+import CommentBubble from './CommentBubble.vue';
+
 export default {
   name: 'MagicHelper',
   components: {
+    CommentBubble,
   },
   data: () => ({
     dragging: false,
@@ -57,7 +61,7 @@ export default {
   width: 200px
   height: 200px
 
-  background-color: red
+  background-color: gray
 
 .capture
   position: fixed
