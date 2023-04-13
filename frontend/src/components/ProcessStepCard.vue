@@ -5,7 +5,7 @@
                 <v-icon v-if="info.alert" size="40">
                     mdi-alert
                 </v-icon>
-                    {{ info.message }}
+                    {{ info.description }}
                 </v-card-title>
             <v-card-text class="text--primary" id="cardText">
               <p>{{ getDateTime }}</p>
