@@ -6,21 +6,38 @@
       <v-list-item-action>
         <v-text-field
           label="Suche..."
+          v-model="search"
+          @input="filterProcesses()"
           prepend-icon="mdi-magnify"
         ></v-text-field>
       </v-list-item-action>
     </v-list-item>
     <v-divider></v-divider>
-    <v-list-item>
-      <v-list-item-title>Insert Card Component</v-list-item-title>
+    <v-list-item
+      v-for="process in filteredProcesses"
+      :key="process.name"
+    >
+      <ProcessCard class="mt-3 mb-3" :process="process"></ProcessCard>
     </v-list-item>
   </v-list>
 </v-card>
 </template>
 
 <script>
+import ProcessCard from './ProcessCard.vue';
+
 export default {
   name: 'CardList',
+  components: {
+    ProcessCard,
+  },
+  data() {
+    return {
+      processes: [],
+      filteredProcesses: [],
+      search: '',
+    };
+  },
   props: {
     stage: {
       type: String,
@@ -31,9 +48,44 @@ export default {
       required: true,
     },
   },
+  methods: {
+    filterProcesses() {
+      if (this.search === undefined || this.search === '') {
+        this.filteredProcesses = this.processes;
+        return;
+      }
+      const filtered = [];
+      // eslint-disable-next-line no-plusplus
+      for (let i = 0; i < this.processes.length; i++) {
+        if (this.processes[i].name.toLocaleLowerCase().includes(this.search.toLocaleLowerCase())) {
+          filtered.push(this.processes[i]);
+        }
+      }
+      this.filteredProcesses = filtered;
+    },
+    pullProcesses() {
+      this.processes = [
+        {
+          id: 'gaylord fucker',
+          privies: [
+            { id: 1, role: 'badasf', name: 'Bürger' },
+            { id: 2, role: 'Chef', name: 'Staat' },
+          ],
+          name: 'Test123',
+          type: 'Typ',
+          date: '11.09.2001',
+          status: {
+            status: 'open',
+            numberOfSteps: 10,
+            currentStep: 4,
+          },
+        },
+      ];
+    },
+  },
+  mounted() {
+    this.pullProcesses();
+    this.filteredProcesses = this.processes;
+  },
 };
 </script>
-
-<style scoped>
-
-</style>

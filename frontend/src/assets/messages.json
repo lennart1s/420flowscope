@@ -1,0 +1,56 @@
+{
+    "messages": [
+        {
+            "msg": "Hallo",
+            "user": false
+        },
+        {
+            "msg": "Test",
+            "user": true
+        },
+        {
+            "msg": "Was geht",
+            "user": false
+        },
+        {
+            "div": true,
+            "count": 1
+        },
+        {
+            "msg": "Nicht viel",
+            "user": false
+        },
+        {
+            "msg": "Lorem ipsum",
+            "user": true
+        },
+        {
+            "msg": "dolor sit amet",
+            "user": false
+        },
+        {
+            "div": true,
+            "count": 2
+        },
+        {
+            "msg": "ahhhhhhhhhhhhhhh",
+            "user": true
+        },
+        {
+            "msg": "yum",
+            "user": false
+        },
+        {
+            "msg": "Test",
+            "user": false
+        },
+        {
+            "div": true,
+            "count": 3
+        },
+        {
+            "msg": "Test",
+            "user": false
+        }
+    ]
+}
