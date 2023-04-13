@@ -10,5 +10,11 @@
     "lastname": "Mustermann",
     "email": "erika.mustermann@mail.de",
     "password": "123456"
+  },
+  "lawfirm@mail.de": {
+    "firstname": "Andre",
+    "lastname": "Geldgeil",
+    "email": "lawfirm@mail.de",
+    "password": "123456"
   }
 }

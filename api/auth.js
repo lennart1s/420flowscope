@@ -6,8 +6,6 @@ const users = require('../db/users.json');
 router.post('/login', eguard(async (req, res) => {
   const { email, password } = req.body;
 
-  console.log(email, password);
-
   assert(users[email] && users[email].password === password,
     401,
     'email and password do not match'
