@@ -3,37 +3,63 @@
     class="text-none"
     block
     large
+    @click="openProcess"
   >
     <span>
-      {{procedureType}}
+      {{process.name}}
     </span>
     <v-divider
       class="mx-4"
       vertical
     />
     <span>
-      {{privy}}
+      {{privyText}}
+    </span>
+    <v-divider
+      class="mx-4"
+      vertical
+    />
+    <span style="color:grey">
+      {{ this.process.date }}
     </span>
     <v-spacer/>
-    <v-chip :color="color">
+    <v-chip color="grey">
       <span style="color:white">
-        {{ notifications }}
+        {{ `${this.process.status.currentStep}/${this.process.status.numberOfSteps}` }}
       </span>
     </v-chip>
+    <v-badge :color="color" :content="notifications" v-if="notifications"/>
   </v-btn>
 </template>
 
 <script>
 export default {
   name: 'ProcessCard',
-  props: ['procedureType', 'privy', 'notifications'],
-  // data: () => {
-  //   return {
-  //   };
-  // },
+  props: ['process'],
+  data: () => ({
+    previousStatus: 2,
+  }),
   computed: {
     color() {
-      return this.notifications === 0 ? 'grey' : 'red';
+      return this.notifications === '0' ? 'grey' : 'red';
+    },
+    privyText() {
+      const { privies } = this.process;
+      let string = privies[0].name;
+      if (privies.length > 1) {
+        string += ', ...';
+      }
+      return string;
+    },
+    notifications() {
+      // if not turned into string, the badge will render no text.
+      return this.process.status.currentStep - this.previousStatus;
+    },
+  },
+  methods: {
+    openProcess() {
+      console.log('button clicked');
+      // TO DO: IMPLEMENT
     },
   },
 };
