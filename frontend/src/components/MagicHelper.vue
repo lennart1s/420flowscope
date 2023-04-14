@@ -11,7 +11,7 @@
 
     <v-card v-show="showDialog" class="card text-right">
       <div ref="capture" class="capture"></div>
-      <v-btn @click="showDialog = false; showButton = true;" color="primary" right>
+      <v-btn @click="close" color="primary" right>
         Abschicken
       </v-btn>
     </v-card>
@@ -44,6 +44,14 @@ export default {
     showDialog: false,
   }),
   methods: {
+    close() {
+      this.showDialog = false;
+      this.showButton = true;
+      this.commentPostions = null;
+      while (this.$refs.capture.hasChildNodes()) {
+        this.$refs.capture.removeChild(this.$refs.capture.childNodes[0]);
+      }
+    },
     startup() {
       this.showButton = false;
 
@@ -102,7 +110,7 @@ export default {
   right: 100px
   width: 200px
   height: 200px
-
+  z-index: 900
   // background-color: gray
 
 .btn
