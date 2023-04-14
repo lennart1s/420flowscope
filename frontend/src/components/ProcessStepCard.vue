@@ -1,11 +1,11 @@
 <template>
     <div>
       <v-timeline-item
-      :color="done ? '#68d88b' : 'red'"
+      :color="done ? greenHex : redHex"
       :left="info.user"
       :icon="'mdi-numeric-' + (index+1)"
       >
-        <v-card :color="done ? '#68d88b' : 'red'" dark>
+        <v-card :color="done ? greenHex : redHex" dark>
             <v-card-title class="text-h6">
                 <v-icon v-if="info.alert" size="40">
                     mdi-alert
@@ -15,7 +15,7 @@
             <v-card-text class="text--primary" id="cardText">
               <p>{{ getDateTime }}</p>
               <!-- eslint-disable-next-line max-len -->
-              <v-btn :color="done ? '#68d88b' : 'red'"  @click="clicked=!clicked" class="mx-0" outlined>
+              <v-btn :color="done ? greenHex : redHex"  @click="clicked=!clicked" class="mx-0" outlined>
                 {{ getButtonLabel }}
               </v-btn>
             </v-card-text>
@@ -49,6 +49,8 @@ export default {
   data() {
     return {
       clicked: false,
+      greenHex: '#62ad75',
+      redHex: '#e55322',
     };
   },
   computed: {
