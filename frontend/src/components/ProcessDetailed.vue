@@ -48,12 +48,11 @@ export default {
   methods: {
     getPrivie(index) {
       const privies = this.getProcessPrivies;
-      console.log(privies);
+      if (privies === null) return null; // Falls privies nicht gegeben
       const privieID = this.getProcessSteps[index].privie;
       // eslint-disable-next-line no-restricted-syntax
       for (let i = 0; i < privies.length; i += 1) {
         if (privies[i] != null) {
-          console.log(privies[i]);
           if (privies[i].id === privieID) return privies[i];
         }
       }

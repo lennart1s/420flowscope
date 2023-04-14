@@ -15,7 +15,7 @@
                     </div>
             </v-card-title>
             <v-card-subtitle>
-              {{ privie.name }}
+              {{ privie != null ? privie.name : ''}} <!-- handle no-privy-given error -->
             </v-card-subtitle>
             <v-card-text class="text--primary" id="cardText">
               <!-- eslint-disable-next-line max-len -->
