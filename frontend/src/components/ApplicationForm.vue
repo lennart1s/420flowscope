@@ -61,10 +61,20 @@
         @change="$set(deps, entry.name, $event);"
       ></v-checkbox>
     </v-container>
+    <v-btn
+      class="ma-2"
+      outlined
+      color="indigo"
+      @click="submit()"
+    >
+      Antrag Senden
+    </v-btn>
   </v-container>
 </template>
 
 <script>
+import { mapActions } from 'vuex';
+
 export default {
   name: 'ApplicationForm',
   data: () => ({
@@ -81,8 +91,13 @@ export default {
     },
   },
   methods: {
+    ...mapActions(['createProcess']),
     showEl(dependentOn) {
       return dependentOn === '' || !!this.deps[dependentOn];
+    },
+    async submit() {
+      await this.createProcess();
+      this.$router.push('/');
     },
   },
 };

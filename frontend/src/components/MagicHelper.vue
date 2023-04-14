@@ -90,7 +90,7 @@ export default {
             // ctx.fillStyle = '#FF0000';
             ctx.strokeStyle = '#FF0000';
             ctx.strokeRect(
-              this.downPos[0] - 130,
+              this.downPos[0] - 170,
               this.downPos[1] - 94,
               e.x - this.downPos[0],
               e.y - this.downPos[1],

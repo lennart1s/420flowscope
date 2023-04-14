@@ -117,6 +117,58 @@ export default new Vuex.Store({
         return null;
       }
     },
+    async createProcess() {
+      try {
+        console.log('create');
+        await fetch('http://localhost:7071/process', {
+          method: 'post',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            type: 'arbitration',
+            payload: {
+              id: '2123123',
+              name: 'Mein Process',
+              privies: [
+                {
+                  name: 'Max Mustermann',
+                },
+                {
+                  name: 'Zweitname',
+                },
+              ],
+              num_steps: 2,
+              step: 1,
+              date: new Date().toLocaleDateString(),
+            },
+            /*
+            {
+    "id": "1",
+    "type": "arbitration",
+    "name": "Kompensation: Flugausfall MH370/MAS370",
+    "privies": [
+      {
+        "id": "max.mustermann@mail.de",
+        "role": "applicant",
+        "name": "MaximilainMustermann"
+      },
+      {
+        "id": "lawfirm@mail.de",
+        "role": "company",
+        "name": "Hengeler Mueller"
+      }
+    ],
+    "num_steps": 5,
+    "step": 5,
+    "steps": [
+            */
+          }),
+        });
+      } catch (e) {
+        console.log(e);
+      }
+    },
   },
   modules: {
   },
