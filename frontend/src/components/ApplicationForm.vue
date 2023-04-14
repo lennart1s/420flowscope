@@ -97,6 +97,7 @@ export default {
     },
     async submit() {
       await this.createProcess();
+      this.$router.push('/');
     },
   },
 };
