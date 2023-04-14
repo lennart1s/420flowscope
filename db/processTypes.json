@@ -1,5 +1,84 @@
 {
+  "Consumer Protection Agency": {
+    "fields": [
+      {
+
+      }
+    ]
+  },
   "arbitration": {
-    "info": "lel"
+    "fields": [
+        {
+          "type": "checkbox",
+          "name": "For someone else?",
+          "required": true,
+          "dependentOn": ""
+        },
+        {
+          "type": "Headline",
+          "name": "Who are you submitting a request for?",
+          "required": false,
+          "dependentOn": "For someone else?"
+        },
+        {
+          "type": "String",
+          "name": "First Name",
+          "required": true,
+          "dependentOn": "For someone else?"
+        },
+        {
+          "type": "String",
+          "name": "Last Name",
+          "required": true,
+          "dependentOn": "For someone else?"
+        },
+        {
+          "type": "String",
+          "name": "Address",
+          "required": true,
+          "dependentOn": "For someone else?"
+        },
+        {
+          "type": "number",
+          "name": "Zip Code",
+          "required": true,
+          "dependentOn": "For someone else?"
+        },
+        {
+          "type": "Headline",
+          "name": "Company"
+        },
+        {
+          "type": "String",
+          "name": "Name",
+          "required": true,
+          "dependentOn": ""
+        },
+        {
+        "type": "String",
+        "name": "Address",
+        "required": true,
+        "dependentOn": ""
+        },
+        {
+        "type": "String",
+        "name": "Zip Code",
+        "required": true,
+        "dependentOn": ""
+        },
+        {
+          "type": "area",
+          "name": "Explain your issue",
+          "required": true,
+          "dependentOn": ""
+        },
+        {
+          "type": "file",
+          "name": "Evidence",
+          "required": true,
+          "dependentOn": ""
+        }
+    ],
+    "steps": []
   }
 }
