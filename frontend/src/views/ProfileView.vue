@@ -13,7 +13,7 @@
           </v-row>
           <v-row>
             <v-spacer/>
-            {{ `${currentUser['firstname']} ${currentUser['lastname']}` }}
+            {{ `${profile['firstname']} ${profile['lastname']}` }}
             <v-spacer/>
           </v-row>
           <profile-value
@@ -21,7 +21,7 @@
               ['email', 'birthday', 'personnel number', 'street', 'house number', 'zip code']"
             :key="valueName"
             :value-name="capitalizeSentence(valueName)"
-            :value="currentUser[valueName]"
+            :value="profile[valueName]"
           />
         <v-row>
         <v-spacer/>
@@ -37,6 +37,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 import users from '../../../db/users.json';
 import ProfileValue from '../components/ProfileValue.vue';
 
@@ -48,15 +49,13 @@ export default {
     userData: users,
   }),
   computed: {
-    currentUser() {
-      return this.userData[this.user];
-    },
+    ...mapGetters(['profile']),
   },
   methods: {
     capitalizeSentence: (string) => {
       const words = string.split(' ');
       for (let i = 0; i < words.length; i += 1) {
-        words[i] = words[i][0].toUpperCase() + words[i].substr(1);
+        words[i] = `${words[i][0].toUpperCase()}${words[i].substr(1)}`;
       }
       return words.join(' ');
     },
