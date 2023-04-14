@@ -7,16 +7,16 @@
      :key="`${entry.name}-${idx}`"
      v-for="entry, idx in data">
         <v-text-field
-          :class="'posDep ^'+entry.dependentOn+'_ hiddenElem'"
-          v-if="entry.type === 'String'"
+          :class="'posDep'"
+          v-if="showEl(entry.dependentOn) && entry.type === 'String'"
           :label="entry.name"
           :required="entry.required"
         >
         </v-text-field>
 
       <v-file-input
-        :class="'posDep ^'+entry.dependentOn+'_ hiddenElem'"
-        v-if="entry.type.indexOf('file-') > -1"
+        :class="'posDep'"
+        v-if="showEl(entry.dependentOn) && entry.type.indexOf('file-') > -1"
         :accept="entry.type.replace('file-','')+'/*'"
         :label="entry.name"
         multiple
@@ -24,19 +24,19 @@
       ></v-file-input>
 
       <v-text-field
-        :class="'posDep ^'+entry.dependentOn+'_ hiddenElem'"
-        v-if="entry.type === 'number'"
+        :class="'posDep'"
+        v-if="showEl(entry.dependentOn) && entry.type === 'number'"
         :label="entry.name"
         :required="entry.required"
       ></v-text-field>
 
       <v-col style="text-align: center"
-      :class="'posDep ^'+entry.dependentOn+'_ hiddenElem'"
-      v-if="entry.type === 'Headline'">
+      :class="'posDep'"
+      v-if="showEl(entry.dependentOn) && entry.type === 'Headline'">
         <p style="text-align: center">{{ entry.name }}</p>
       </v-col>
-      <v-col :class="'posDep ^'+entry.dependentOn+'_ hiddenElem'"
-      v-if="entry.type === 'date'">
+      <v-col :class="'posDep'"
+      v-if="showEl(entry.dependentOn) && entry.type === 'date'">
         <p>{{ entry.name }}</p>
         <v-date-picker :label="entry.name"></v-date-picker>
       </v-col>
@@ -45,7 +45,8 @@
         v-if="entry.type === 'checkbox'"
         :label="entry.name"
         :id="entry.name"
-        @click="checkDeps()"
+        :ref="entry.name"
+        @change="$set(deps, entry.name, $event);"
       ></v-checkbox>
     </v-container>
   </v-container>
@@ -54,6 +55,9 @@
 <script>
 export default {
   name: 'ApplicationForm',
+  data: () => ({
+    deps: {},
+  }),
   props: {
     name: {
       type: String,
@@ -65,39 +69,9 @@ export default {
     },
   },
   methods: {
-    isChecked(dependentOn) {
-      if (dependentOn === null || dependentOn === '') {
-        return false;
-      }
-      const box = document.getElementById(dependentOn);
-      if (box === null || box.ariaChecked === null) {
-        return false;
-      }
-      return box.ariaChecked;
+    showEl(dependentOn) {
+      return dependentOn === '' || !!this.deps[dependentOn];
     },
-    checkDeps() {
-      console.log('checkdeps');
-      const array = document.getElementsByClassName('posDep');
-      for (let i = 0; i < array.length; i += 1) {
-        console.log(i);
-        const e = array[i];
-        e.className = e.className.replace('hiddenElem', '');
-        const c = e.className;
-        const b = this.isChecked(c.substring(c.indexOf('^') + 1, c.indexOf('_')));
-        console.log(b);
-        if (b !== 'false' && b) {
-          if (e != null && e !== undefined) {
-            e.style.display = 'none';
-          }
-        } else if (e != null && e !== undefined) {
-          e.style.display = 'block';
-        }
-      }
-    },
-  },
-  mounted() {
-    console.log('data', this.data);
-    this.checkDeps();
   },
 };
 
