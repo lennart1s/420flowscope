@@ -10,12 +10,14 @@ export default new Vuex.Store({
     processes: [],
     done_processes: null,
     pending_processes: null,
+    process_types: null,
   },
   getters: {
     profile: (state) => state.profile,
     process: (state) => state.process,
     done_processes: (state) => state.done_processes,
     pending_processes: (state) => state.pending_processes,
+    process_types: (state) => state.process_types,
   },
   mutations: {
     setProcess(state, newProcess) {
@@ -98,6 +100,20 @@ export default new Vuex.Store({
         return processes;
       } catch (e) {
         state.done_processes = null;
+        return null;
+      }
+    },
+    async processTypes({ state }) {
+      try {
+        const resp = await fetch('http://localhost:7071/process/types');
+        if (resp.status !== 200) {
+          state.process_types = null;
+          return null;
+        }
+        const types = await resp.json();
+        state.process_types = types;
+        return types;
+      } catch (e) {
         return null;
       }
     },
