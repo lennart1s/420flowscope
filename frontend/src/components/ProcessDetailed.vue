@@ -1,14 +1,8 @@
 <template>
     <div id="frame">
         <v-timeline id="timeline">
-            <div v-for="(step,index) in processSteps" :key="index">
-              <v-timeline-item
-                :color="step.done ? '#68d88b' : 'red'"
-                :left="step.user"
-                :icon="'mdi-numeric-' + (index+1)"
-              >
-              <process-step-card :info="step"/>
-              </v-timeline-item>
+            <div v-for="(step,index) in getProcessSteps" :key="index">
+              <process-step-card :info="step" :index="index" :step="getProcessStep"/>
             </div>
             <!--<v-timeline-item>
                 Test1
@@ -20,35 +14,33 @@
                 Test3
             </v-timeline-item>-->
         </v-timeline>
-        <div id="chatFrame">
+        <!-- <div id="chatFrame">
             <com-chat/>
-        </div>
+        </div> -->
     </div>
 </template>
 
 <script>
-import json from '../assets/processSteps.json';
 import ProcessStepCard from './ProcessStepCard.vue';
-import ComChat from './ComChat.vue';
 
 export default {
   components: {
-    ComChat,
     ProcessStepCard,
   },
   data() {
     return {
-      processSteps: json.steps,
+      processNr: this.$store.getters.process.num_steps,
+      processSteps: this.$store.getters.process.steps,
     };
   },
-  /* methods: {
-    getStepDate: function (step) {
-      console.log(step.time);
-      // eslint-disable-next-line no-prototype-builtins
-      if (step.hasOwnProperty('time')) return (new Date(step.time).toLocaleDateString());
-      return '';
+  computed: {
+    getProcessSteps() {
+      return this.$store.getters.process.steps;
     },
-  }, */
+    getProcessStep() {
+      return this.$store.getters.process.step;
+    },
+  },
 };
 </script>
 

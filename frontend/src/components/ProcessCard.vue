@@ -6,7 +6,7 @@
     @click="openProcess"
   >
     <span>
-      {{process.name}}
+      {{ this.process.name }}
     </span>
     <v-divider
       class="mx-4"
@@ -25,7 +25,7 @@
     <v-spacer/>
     <v-chip color="grey">
       <span style="color:white">
-        {{ `${this.process.status.currentStep}/${this.process.status.numberOfSteps}` }}
+        {{ `${this.process.step}/${this.process.num_steps }` }}
       </span>
     </v-chip>
     <v-badge :color="color" :content="notifications" v-if="notifications"/>
@@ -47,13 +47,16 @@ export default {
       return this.process.privies.map((privy) => privy.name).join(', ');
     },
     notifications() {
-      return this.process.status.currentStep - this.previousStatus;
+      // if not turned into string, the badge will render no text.
+      return this.process.step - this.previousStatus;
     },
   },
   methods: {
     openProcess() {
       console.log('button clicked');
-      // TO DO: IMPLEMENT
+      // TODO: IMPLEMENT
+      this.$store.commit('setProcess', this.process);
+      this.$router.push({ path: 'inspect' });
     },
   },
 };

@@ -6,15 +6,39 @@
     "privies": [
       {
         "id": "max.mustermann@mail.de",
-        "role": "applicant"
+        "role": "applicant",
+        "name": "MaximilainMustermann"
       },
       {
         "id": "lawfirm@mail.de",
-        "role": "company"
+        "role": "company",
+        "name": "Hengeler Mueller"
       }
     ],
     "num_steps": 5,
-    "step": 5
+    "step": 2,
+    "steps": [
+      {
+        "description": "Ersten Antrag stellen",
+        "user": true
+      },
+      {
+        "description": "Erste Rückmeldung",
+        "user": false
+      },
+      {
+        "description": "Nachbesserung des Antrags",
+        "user": true
+      },
+      {
+        "description": "Acknowledgement",
+        "user": false
+      },
+      {
+        "description": "Acknowledgement",
+        "user": true
+      }
+    ]
   },
   {
     "id": "2",
@@ -31,6 +55,28 @@
       }
     ],
     "num_steps": 5,
-    "step": 3
+    "step": 3,
+    "steps": [
+      {
+        "description": "Ersten Antrag stellen",
+        "user": true
+      },
+      {
+        "description": "Erste Rückmeldung",
+        "user": false
+      },
+      {
+        "description": "Nachbesserung des Antrags",
+        "user": true
+      },
+      {
+        "description": "Acknowledgement",
+        "user": false
+      },
+      {
+        "description": "Acknowledgement",
+        "user": true
+      }
+    ]
   }
 ]

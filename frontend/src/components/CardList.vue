@@ -1,10 +1,11 @@
 <template>
-<v-card width="100%" class="mb-6 mt-6">
+<v-card width="100%" class="mb-6 mt-6" color="rgb(255, 255, 255, 0)" elevation="15">
   <v-list>
     <v-list-item>
       <v-list-item-title class="text-h6">{{ title }}</v-list-item-title>
       <v-list-item-action>
         <v-text-field
+          class="text-h6"
           label="Suche..."
           v-model="search"
           @input="filterProcesses()"
@@ -24,6 +25,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
 import ProcessCard from './ProcessCard.vue';
 
 export default {
@@ -49,6 +51,7 @@ export default {
     },
   },
   methods: {
+    ...mapActions(['pendingProcesses', 'doneProcesses']),
     filterProcesses() {
       if (this.search === undefined || this.search === '') {
         this.filteredProcesses = this.processes;
@@ -63,29 +66,17 @@ export default {
       }
       this.filteredProcesses = filtered;
     },
-    pullProcesses() {
-      this.processes = [
-        {
-          id: 'gaylord fucker',
-          privies: [
-            { id: 1, role: 'badasf', name: 'Bürger' },
-            { id: 2, role: 'Chef', name: 'Staat' },
-          ],
-          name: 'Test123',
-          type: 'Typ',
-          date: '11.09.2001',
-          status: {
-            status: 'open',
-            numberOfSteps: 10,
-            currentStep: 4,
-          },
-        },
-      ];
+    async pullProcesses() {
+      if (this.stage === 'done') {
+        this.processes = await this.doneProcesses();
+      } else if (this.stage === 'pending') {
+        this.processes = await this.pendingProcesses();
+      }
+      this.filteredProcesses = this.processes;
     },
   },
   mounted() {
     this.pullProcesses();
-    this.filteredProcesses = this.processes;
   },
 };
 </script>
