@@ -62,6 +62,14 @@
         @change="$set(deps, entry.name, $event);"
       ></v-checkbox>
     </v-container>
+    <v-btn
+      class="ma-2"
+      outlined
+      color="indigo"
+      @click="submit()"
+    >
+      Antrag Senden
+    </v-btn>
   </v-container>
 </template>
 
