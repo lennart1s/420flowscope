@@ -2,7 +2,7 @@
   {
     "id": "1",
     "type": "arbitration",
-    "name": "Fluggastrechte MH370/MAS370",
+    "name": "Fluggastrechte MT140/MKJ190",
     "date": "2023-04-14",
     "privies": [
       {
@@ -27,9 +27,15 @@
         "privie": "fabian@mueller-hamm.de"
       },
       {
+        "description": "Nachforderung von Unterlagen",
+        "user": false,
+        "time": "2023-04-14T08:02:28.345Z",
+        "type": "file",
+        "privie": "info@lufthansa.de"
+      },
+      {
         "description": "Entschädigungsangebot",
         "user": false,
-        "time": "2023-04-14T08:15:28.345Z",
         "privie": "info@lufthansa.de"
       },
       {
@@ -59,7 +65,7 @@
       {
         "id": "lawfirm@mail.de",
         "role": "company",
-        "name": "Andre Geldgeil"
+        "name": "Andre Gertner"
       }
     ],
     "num_steps": 5,
@@ -129,12 +135,12 @@
         "alert": true
       },
       {
-        "description": "Moskau Inkasso",
+        "description": "Inkasso",
         "user": false,
         "privie": "office@kmail.de"
       },
       {
-        "description": "Auf die Fresse kriegen",
+        "description": "Einzug",
         "user": true,
         "privie": "jax.mustermann@mail.de",
         "alert": true

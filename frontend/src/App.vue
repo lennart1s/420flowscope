@@ -6,7 +6,7 @@
       dark
     >
       <!-- ggf noch loading icon + skeleton loading-->
-      <v-btn class="text-h6" plain to="/">420flowscope</v-btn>
+      <v-btn class="text-h6" plain to="/">flowscope</v-btn>
       <v-spacer></v-spacer>
       <v-btn
         elevation="2"

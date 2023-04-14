@@ -5,6 +5,9 @@
       :left="info.user"
       :icon="'mdi-numeric-' + (index+1)"
       >
+        <span slot="opposite">
+          <p id="date" v-if="getDateTime()">Abgeschlossen am: {{ getDateTime() }}</p>
+        </span>
         <v-card :color="done ? greenHex : redHex" dark>
             <v-card-title class="text-h6">
                 <v-icon v-if="info.alert" size="40">
@@ -19,14 +22,13 @@
             </v-card-subtitle>
             <v-card-text class="text--primary" id="cardText">
               <!-- eslint-disable-next-line max-len -->
-              <v-btn :color="done ? greenHex : redHex"  @click="clicked=!clicked" class="mx-0" outlined>
+              <v-btn v-if="isFile" :color="done ? greenHex : redHex"  @click="clicked=!clicked" class="mx-0" outlined id="button">
                 {{ getButtonLabel }}
               </v-btn>
             </v-card-text>
             <div id="cardTextBox">
               <v-expand-transition>
                 <div v-show="clicked">
-                  <p v-if="getDateTime()">Abgeschlossen am: {{ getDateTime() }}</p>
                   <v-file-input id="fileInput"
                   v-if="isFile"
                   label="File input"
@@ -108,5 +110,11 @@ export default {
 }
 #cardTitle {
   vertical-align: middle;
+}
+#date {
+  color: white;
+}
+#button {
+  margin-top: 12px;
 }
 </style>
