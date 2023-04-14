@@ -1,66 +1,84 @@
 {
+  "Consumer Protection Agency": {
+    "fields": [
+      {
+
+      }
+    ]
+  },
   "arbitration": {
     "fields": [
         {
-          "type": "String",
-          "name": "kurze Beschreibung des Vorfalls",
-          "required": true,
-          "dependentOn": ""
-        },
-        {
-          "type": "date",
-          "name": "Datum des Vorfalls",
-          "required": false,
-          "dependentOn": ""
-        },
-        {
           "type": "checkbox",
-          "name": "Antrag für jemand anderen",
+          "name": "For someone else?",
           "required": true,
           "dependentOn": ""
         },
         {
           "type": "Headline",
-          "name": "Adresse geschädigter",
+          "name": "Who are you submitting a request for?",
           "required": false,
-          "dependentOn": "Antrag für jemand anderen"
+          "dependentOn": "For someone else?"
         },
         {
           "type": "String",
-          "name": "Vorname",
+          "name": "First Name",
           "required": true,
-          "dependentOn": "Antrag für jemand anderen"
+          "dependentOn": "For someone else?"
         },
         {
           "type": "String",
-          "name": "Nachname",
+          "name": "Last Name",
           "required": true,
-          "dependentOn": "Antrag für jemand anderen"
+          "dependentOn": "For someone else?"
         },
         {
           "type": "String",
-          "name": "Straße und Hausnummer",
+          "name": "Address",
           "required": true,
-          "dependentOn": "Antrag für jemand anderen"
+          "dependentOn": "For someone else?"
         },
         {
           "type": "number",
-          "name": "Postleitzahl",
+          "name": "Zip Code",
           "required": true,
-          "dependentOn": "Antrag für jemand anderen"
+          "dependentOn": "For someone else?"
+        },
+        {
+          "type": "Headline",
+          "name": "Company"
         },
         {
           "type": "String",
-          "name": "Firma",
+          "name": "Name",
+          "required": true,
+          "dependentOn": ""
+        },
+        {
+        "type": "String",
+        "name": "Address",
+        "required": true,
+        "dependentOn": ""
+        },
+        {
+        "type": "String",
+        "name": "Zip Code",
+        "required": true,
+        "dependentOn": ""
+        },
+        {
+          "type": "area",
+          "name": "Explain your issue",
           "required": true,
           "dependentOn": ""
         },
         {
           "type": "file",
-          "name": "Name",
+          "name": "Evidence",
           "required": true,
-          "dependentOn": "Antrag für jemand anderen"
+          "dependentOn": ""
         }
-    ]
+    ],
+    "steps": []
   }
 }
