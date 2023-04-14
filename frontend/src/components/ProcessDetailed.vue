@@ -40,6 +40,23 @@ export default {
     getProcessStep() {
       return this.$store.getters.process.step;
     },
+    getProcessPrivies() {
+      return this.$store.getters.process.privies;
+    },
+  },
+  methods: {
+    getPrivie(index) {
+      const privies = this.getProcessPrivies;
+      if (privies === null) return null; // Falls privies nicht gegeben
+      const privieID = this.getProcessSteps[index].privie;
+      // eslint-disable-next-line no-restricted-syntax
+      for (let i = 0; i < privies.length; i += 1) {
+        if (privies[i] != null) {
+          if (privies[i].id === privieID) return privies[i];
+        }
+      }
+      return null;
+    },
   },
 };
 </script>

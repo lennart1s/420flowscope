@@ -75,11 +75,66 @@
       },
       {
         "description": "Acknowledgement",
-        "user": false
+        "user": true
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "type": "Anmeldung",
+    "name": "Hund anmelden",
+    "privies": [
+      {
+        "id": "jax.mustermann@mail.de",
+        "role": "applicant",
+        "name": "Jaximilian Mustermann"
       },
       {
-        "description": "Acknowledgement",
-        "user": true
+        "id": "office@kmail.de",
+        "role": "government office",
+        "name": "Amt für Haustierisches"
+      }
+    ],
+    "num_steps": 7,
+    "step": 7,
+    "steps": [
+      {
+        "description": "Hund kaufen",
+        "user": true,
+        "privie": "jax.mustermann@mail.de"
+      },
+      {
+        "description": "Nach 2 Jahren Hund bemerken",
+        "user": false,
+        "privie": "office@kmail.de"
+      },
+      {
+        "description": "Bei Bürger beschweren",
+        "user": false,
+        "privie": "office@kmail.de"
+      },
+      {
+        "description": "Nachrichten ignorieren",
+        "user": true,
+        "privie": "jax.mustermann@mail.de",
+        "alert": true
+      },
+      {
+        "description": "Moskau Inkasso",
+        "user": false,
+        "privie": "office@kmail.de"
+      },
+      {
+        "description": "Auf die Fresse kriegen",
+        "user": true,
+        "privie": "jax.mustermann@mail.de",
+        "alert": true
+      },
+      {
+        "description": "Gegenklage",
+        "user": true,
+        "privie": "office@kmail.de",
+        "alert": true
       }
     ]
   }

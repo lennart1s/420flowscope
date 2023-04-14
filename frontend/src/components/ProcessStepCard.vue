@@ -10,8 +10,13 @@
                 <v-icon v-if="info.alert" size="40">
                     mdi-alert
                 </v-icon>
-                    {{ info.description }}
-                </v-card-title>
+                    <div>
+                      {{ info.description }}
+                    </div>
+            </v-card-title>
+            <v-card-subtitle>
+              {{ privie != null ? privie.name : ''}} <!-- handle no-privy-given error -->
+            </v-card-subtitle>
             <v-card-text class="text--primary" id="cardText">
               <p>{{ getDateTime }}</p>
               <!-- eslint-disable-next-line max-len -->
