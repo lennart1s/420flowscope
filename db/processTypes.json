@@ -1,5 +1,5 @@
 {
-  "arbitration": {
+  "Arbitration": {
     "fields": [
       {
         "type": "checkbox",
@@ -117,13 +117,7 @@
         "name": "Company"
       },
       {
-        "type": "String",
-        "name": "Name",
-        "required": true,
-        "dependentOn": ""
-      },
-      {
-        "type": "file",
+        "type": "file-",
         "name": "Bill",
         "required": true,
         "dependentOn": ""

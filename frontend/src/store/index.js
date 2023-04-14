@@ -129,13 +129,13 @@ export default new Vuex.Store({
             type: 'arbitration',
             payload: {
               id: '2123123',
-              name: 'Mein Process',
+              name: 'Beihilfe',
               privies: [
                 {
                   name: 'Max Mustermann',
                 },
                 {
-                  name: 'Zweitname',
+                  name: 'Beihilfestelle',
                 },
               ],
               num_steps: 2,
