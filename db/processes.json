@@ -2,51 +2,46 @@
   {
     "id": "1",
     "type": "arbitration",
-    "name": "Kompensation: Flugausfall MH370/MAS370",
+    "name": "Fluggastrechte MH370/MAS370",
     "date": "2023-04-14",
     "privies": [
       {
-        "id": "max.mustermann@mail.de",
+        "id": "fabian@mueller-hamm.de",
         "role": "applicant",
-        "name": "Maximilian Mustermann"
+        "name": "Fabian Müller"
       },
       {
-        "id": "lawfirm@mail.de",
+        "id": "info@lufthansa.de",
         "role": "company",
-        "name": "Hengeler Mueller"
+        "name": "Lufthansa"
       }
     ],
     "num_steps": 5,
     "step": 2,
     "steps": [
       {
-        "description": "Ersten Antrag stellen",
+        "description": "Antrag auf Fluggastentschädigung",
         "user": true,
         "time": "2023-04-13T17:39:43.511Z",
         "type": "file",
-        "privie": "max.mustermann@mail.de"
+        "privie": "fabian@mueller-hamm.de"
       },
       {
         "description": "Entschädigungsangebot",
         "user": false,
         "time": "2023-04-14T08:15:28.345Z",
-        "privie": "lawfirm@mail.de"
+        "privie": "info@lufthansa.de"
       },
       {
-        "description": "Annahme/Gegenangebot",
+        "description": "Annahme/Ablehnung",
         "user": true,
-        "privie": "max.mustermann@mail.de"
+        "privie": "fabian@mueller-hamm.de"
       },
       {
-        "description": "Acknowledgement",
+        "description": "Vortrag zur Schadenshöhe",
         "user": false,
         "type": "file",
-        "privie": "lawfirm@mail.de"
-      },
-      {
-        "description": "Acknowledgement",
-        "user": true,
-        "privie": "max.mustermann@mail.de"
+        "privie": "info@lufthansa.de"
       }
     ]
   },
