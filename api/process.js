@@ -36,7 +36,7 @@ router.post('/', eguard(async (req, res) => {
   const userEmail = req.headers.authorization;
   const { type, payload } = req.body;
 
-  assert(userEmail && users[userEmail], 401);
+  // assert(userEmail && users[userEmail], 401);
   assert(type && processTypes[type], 403, `unknown process type '${type}'`);
   
   // TODO: check payload
