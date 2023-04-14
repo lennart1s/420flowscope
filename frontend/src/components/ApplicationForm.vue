@@ -73,6 +73,8 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
+
 export default {
   name: 'ApplicationForm',
   data: () => ({
@@ -89,8 +91,12 @@ export default {
     },
   },
   methods: {
+    ...mapActions(['createProcess']),
     showEl(dependentOn) {
       return dependentOn === '' || !!this.deps[dependentOn];
+    },
+    async submit() {
+      await this.createProcess();
     },
   },
 };
