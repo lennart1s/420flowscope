@@ -1,6 +1,11 @@
 <template>
     <div>
-        <v-card :color="info.done ? '#68d88b' : 'red'" dark>
+      <v-timeline-item
+      :color="done ? '#68d88b' : 'red'"
+      :left="info.user"
+      :icon="'mdi-numeric-' + (index+1)"
+      >
+        <v-card :color="done ? '#68d88b' : 'red'" dark>
             <v-card-title class="text-h6">
                 <v-icon v-if="info.alert" size="40">
                     mdi-alert
@@ -10,7 +15,7 @@
             <v-card-text class="text--primary" id="cardText">
               <p>{{ getDateTime }}</p>
               <!-- eslint-disable-next-line max-len -->
-              <v-btn :color="info.done ? '#68d88b' : 'red'"  @click="clicked=!clicked" class="mx-0" outlined>
+              <v-btn :color="done ? '#68d88b' : 'red'"  @click="clicked=!clicked" class="mx-0" outlined>
                 {{ getButtonLabel }}
               </v-btn>
             </v-card-text>
@@ -26,6 +31,7 @@
               </v-expand-transition>
             </div>
         </v-card>
+      </v-timeline-item>
     </div>
 </template>
 
@@ -37,6 +43,8 @@ export default {
       type: Object,
       default: () => {},
     },
+    index: Number,
+    step: Number,
   },
   data() {
     return {
@@ -54,6 +62,13 @@ export default {
       if (this.clicked) {
         return 'See less';
       } return 'See more';
+    },
+    done() {
+      console.log(this.step);
+      if (this.index < this.step) {
+        return true;
+      }
+      return false;
     },
     /* clickedCom() {
       return this.clicked;
