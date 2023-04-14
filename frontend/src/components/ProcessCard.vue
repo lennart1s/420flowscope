@@ -37,7 +37,7 @@ export default {
   name: 'ProcessCard',
   props: ['process'],
   data: () => ({
-    previousStatus: 2,
+    previousStatus: 1,
   }),
   computed: {
     color() {
