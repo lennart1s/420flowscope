@@ -2,16 +2,17 @@
   <v-container fluid>
     <v-list color="rgb(255, 255, 255, 0)">
       <v-list-item color="rgb(255, 255, 255, 0.88)">
-        <CardList stage="pending" title="Offene Prozesse"></CardList>
+        <CardList stage="pending" title="Pending Processes"></CardList>
       </v-list-item>
       <v-list-item color="rgb(255, 255, 255, 0.88)">
-        <CardList stage="done" title="Beendete Prozesse"></CardList>
+        <CardList stage="done" title="Finished Processes"></CardList>
       </v-list-item>
     </v-list>
   </v-container>
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 
 import CardList from '../components/CardList.vue';
 
@@ -20,6 +21,15 @@ export default {
   components: {
     CardList,
   },
+  computed: {
+    ...mapGetters(['profile']),
+  },
+  // created: () => {
+  //   console.log(mapGetters(['profile']));
+  //   if (this.profile === undefined) {
+  //     this.$router.push('/login');
+  //   }
+  // },
 };
 
 </script>
