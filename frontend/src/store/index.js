@@ -49,9 +49,7 @@ export default new Vuex.Store({
     },
     async pendingProcesses({ state }) {
       try {
-        const resp = await fetch('http://localhost:7071/process', {
-          headers: { status: 'pending' },
-        });
+        const resp = await fetch('http://localhost:7071/process?status=pending');
         if (resp.status !== 200) {
           console.log(resp.status);
           state.pending_processes = null;
@@ -67,9 +65,7 @@ export default new Vuex.Store({
     },
     async doneProcesses({ state }) {
       try {
-        const resp = await fetch('http://localhost:7071/process', {
-          headers: { status: 'done' },
-        });
+        const resp = await fetch('http://localhost:7071/process?status=done');
         if (resp.status !== 200) {
           state.done_processes = null;
           return null;

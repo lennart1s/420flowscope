@@ -16,7 +16,7 @@
       }
     ],
     "num_steps": 5,
-    "step": 5,
+    "step": 2,
     "steps": [
       {
         "description": "Ersten Antrag stellen",

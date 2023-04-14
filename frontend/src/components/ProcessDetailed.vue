@@ -2,13 +2,7 @@
     <div id="frame">
         <v-timeline id="timeline">
             <div v-for="(step,index) in getProcessSteps" :key="index">
-              <v-timeline-item
-                :color="step.done ? '#68d88b' : 'red'"
-                :left="step.user"
-                :icon="'mdi-numeric-' + (index+1)"
-              >
-              <process-step-card :info="step"/>
-              </v-timeline-item>
+              <process-step-card :info="step" :index="index" :step="getProcessStep"/>
             </div>
             <!--<v-timeline-item>
                 Test1
@@ -42,6 +36,9 @@ export default {
   computed: {
     getProcessSteps() {
       return this.$store.getters.process.steps;
+    },
+    getProcessStep() {
+      return this.$store.getters.process.step;
     },
   },
 };
