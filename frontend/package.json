@@ -9,9 +9,8 @@
     "start": "npm run serve"
   },
   "dependencies": {
-    "@mdi/font": "^7.2.96",
     "core-js": "^3.8.3",
-    "html2canvas": "^1.4.1",
+    "@mdi/font": "^7.2.96",
     "material-design-icons-iconfont": "^6.7.0",
     "pnpm": "^8.2.0",
     "vue": "^2.6.14",

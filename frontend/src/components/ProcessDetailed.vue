@@ -2,8 +2,7 @@
     <div id="frame">
         <v-timeline id="timeline">
             <div v-for="(step,index) in getProcessSteps" :key="index">
-              <!-- eslint-disable-next-line max-len -->
-              <process-step-card :info="step" :index="index" :step="getProcessStep" :privie="getPrivie(index)"/>
+              <process-step-card :info="step" :index="index" :step="getProcessStep"/>
             </div>
             <!--<v-timeline-item>
                 Test1

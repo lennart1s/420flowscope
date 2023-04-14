@@ -21,32 +21,23 @@
     "steps": [
       {
         "description": "Ersten Antrag stellen",
-        "user": true,
-        "time": "2023-04-13T17:39:43.511Z",
-        "type": "file",
-        "privie": "max.mustermann@mail.de"
+        "user": true
       },
       {
-        "description": "Entschädigungsangebot",
-        "user": false,
-        "time": "2023-04-14T08:15:28.345Z",
-        "privie": "lawfirm@mail.de"
+        "description": "Erste Rückmeldung",
+        "user": false
       },
       {
-        "description": "Annahme/Gegenangebot",
-        "user": true,
-        "privie": "max.mustermann@mail.de"
+        "description": "Nachbesserung des Antrags",
+        "user": true
       },
       {
         "description": "Acknowledgement",
-        "user": false,
-        "type": "file",
-        "privie": "lawfirm@mail.de"
+        "user": false
       },
       {
         "description": "Acknowledgement",
-        "user": true,
-        "privie": "max.mustermann@mail.de"
+        "user": true
       }
     ]
   },
@@ -81,11 +72,6 @@
       {
         "description": "Nachbesserung des Antrags",
         "user": true
-      },
-      {
-        "description": "Dateinachtragung erforderlich",
-        "user": false,
-        "alert": true
       },
       {
         "description": "Acknowledgement",
