@@ -7,6 +7,7 @@ export default new Vuex.Store({
   state: {
     profile: null,
     process: null,
+    processes: [],
     done_processes: null,
     pending_processes: null,
   },
@@ -45,6 +46,28 @@ export default new Vuex.Store({
       } catch (e) {
         state.profile = null;
         return null;
+      }
+    },
+    async getProcesses({ state }, { status }) {
+      try {
+        const url = new URL('http://localhost:7071/process');
+        if (status) {
+          url.searchParams.append('status', status);
+        }
+        const resp = await fetch(url);
+
+        if (resp.status !== 200) {
+          state.processes = [];
+          return [];
+        }
+
+        const processes = await resp.json();
+
+        state.processes = processes;
+        return processes;
+      } catch (e) {
+        state.processes = [];
+        return [];
       }
     },
     async pendingProcesses({ state }) {
