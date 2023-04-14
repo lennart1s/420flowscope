@@ -2,6 +2,7 @@
   <v-app>
     <v-main>
       <MagicHelper></MagicHelper>
+      oawidaowdijaowjdoiajwdio
       <router-view/>
     </v-main>
   </v-app>
