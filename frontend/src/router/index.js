@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import AddProcess from '@/views/AddProcess.vue';
 import Dashboard from '../views/Dashboard.vue';
 import ProcessInspect from '../views/ProcessInspect.vue';
 import ProfileView from '../views/ProfileView.vue';
@@ -28,6 +29,11 @@ const routes = [
     path: '/',
     name: 'dashboard',
     component: Dashboard,
+  },
+  {
+    path: '/add',
+    name: 'add',
+    component: AddProcess,
   },
   {
     path: '/inspect',

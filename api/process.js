@@ -6,20 +6,8 @@ const users = require('../db/users.json');
 const processes = require('../db/processes.json');
 const processTypes = require('../db/processTypes.json');
 
-router.get('/types/:typeId?', eguard(async (req, res) => {
-  const { typeId } = req.params;
-
-  if (!typeId) {
-    res.json(processTypes).send();
-    return;
-  }
-
-  assert(processTypes[typeId], 404, `no type found with id '${typeId}'`);
-
-  const type = JSON.parse(JSON.stringify(processTypes[typeId]));
-  type.type = typeId;
-
-  res.json(type).send();
+router.get('/types', eguard(async (req, res) => {
+  res.json(processTypes);
 }));
 
 router.get('/:id?', eguard(async (req, res) => {

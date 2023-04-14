@@ -1,7 +1,5 @@
 <template>
   <v-container class="flexCon">
-    <p>{{ name }}</p>
-
     <v-container
 
      :key="`${entry.name}-${idx}`"
