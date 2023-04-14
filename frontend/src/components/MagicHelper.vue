@@ -3,7 +3,7 @@
     <v-btn
       class="btn"
       v-show="showButton"
-      color="primary"
+      color="#CCCCCC"
       @click="startup"
     >
       Frage?
@@ -116,7 +116,7 @@ export default {
 .btn
   position: fixed
   right: 10px
-  top: 40%
+  bottom: 20px
 
 .card
   position: fixed

@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper" :style="{'top': `${y}px`, 'left': `${x}px`}">
-    <textarea v-model="comment"></textarea>
+    <textarea v-model="comment" autofocus></textarea>
   </div>
 </template>
 
@@ -33,15 +33,17 @@ export default {
   // top: 30%
   // left: 30%
 
-  background-color: rgba(200, 200, 200, 1)
+  background-color: rgba(240, 240, 240, 1)
 
   padding: 10px
+  padding-top: 13px
   height: 30px
   width: 60px
   resize: both
   width: max-content !important
   height: max-content !important
   border-radius: 5px
+  box-shadow: 3px 2px 1px 1px rgba(0,0,0,0.1)
   // height: max-content !important
   // width: 20px
   // height: 20px
@@ -53,7 +55,7 @@ export default {
     left: calc(50% - 7px)
     width: 20px
     height: 20px
-    background-color: rgba(200, 200, 200, 1)
+    background-color: inherit
     transform: rotate(45deg)
     border-radius: 5px
 </style>
