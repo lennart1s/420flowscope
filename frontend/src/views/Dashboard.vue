@@ -21,15 +21,6 @@ export default {
   components: {
     CardList,
   },
-  computed: {
-    ...mapGetters(['profile']),
-  },
-  // created: () => {
-  //   console.log(mapGetters(['profile']));
-  //   if (this.profile === undefined) {
-  //     this.$router.push('/login');
-  //   }
-  // },
 };
 
 </script>

@@ -54,12 +54,6 @@ export default {
 <style>
 #app {
   background-image: url('./assets/stacked-waves-haikei.svg');
-  /* background-size: cover; */
-
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  background-size: cover;
 }
 </style>

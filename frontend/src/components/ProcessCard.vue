@@ -48,7 +48,6 @@ export default {
       return this.process.privies.map((privy) => privy.name).join(', ');
     },
     notifications() {
-      // if not turned into string, the badge will render no text.
       return this.process.step - this.previousStatus;
     },
   },
