@@ -2,8 +2,7 @@
     <div id="frame">
         <v-timeline id="timeline">
             <div v-for="(step,index) in getProcessSteps" :key="index">
-              <!-- eslint-disable-next-line max-len -->
-              <process-step-card :info="step" :index="index" :step="getProcessStep" :privie="getPrivie(index)"/>
+              <process-step-card :info="step" :index="index" :step="getProcessStep"/>
             </div>
             <!--<v-timeline-item>
                 Test1
@@ -40,24 +39,6 @@ export default {
     },
     getProcessStep() {
       return this.$store.getters.process.step;
-    },
-    getProcessPrivies() {
-      return this.$store.getters.process.privies;
-    },
-  },
-  methods: {
-    getPrivie(index) {
-      const privies = this.getProcessPrivies;
-      console.log(privies);
-      const privieID = this.getProcessSteps[index].privie;
-      // eslint-disable-next-line no-restricted-syntax
-      for (let i = 0; i < privies.length; i += 1) {
-        if (privies[i] != null) {
-          console.log(privies[i]);
-          if (privies[i].id === privieID) return privies[i];
-        }
-      }
-      return null;
     },
   },
 };
