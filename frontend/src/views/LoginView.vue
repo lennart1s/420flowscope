@@ -2,7 +2,7 @@
   <div class="wrapper">
     <v-card :class="['card', {'valid': valid}]" outlined>
       <h2 class="mx-4 mt-4">
-        Welcome to 420FlowScope!
+        Welcome to FlowScope!
       </h2>
       <v-form>
        <v-container class="mt-8">

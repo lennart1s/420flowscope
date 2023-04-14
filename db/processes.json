@@ -3,7 +3,7 @@
     "id": "1",
     "type": "arbitration",
     "name": "Fluggastrechte MT140/MKJ190",
-    "date": "2023-04-14",
+    "date": "14.04.2023",
     "privies": [
       {
         "id": "fabian@mueller-hamm.de",
@@ -55,7 +55,7 @@
     "id": "2",
     "type": "arbitration",
     "name": "Kompensation: Waschmaschinenlieferung",
-    "date": "2023-04-13",
+    "date": "13.04.2023",
     "privies": [
       {
         "id": "max.mustermann@mail.de",
