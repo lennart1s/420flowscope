@@ -13,9 +13,9 @@
         v-model="tab"
         bg-color="primary"
       >
-        <v-tab value="pending" class="tab">Offene Prozesse</v-tab>
-        <v-tab value="done" class="tab">Abgeschlossene Prozesse</v-tab>
-        <v-tab value="all" class="tab">Alle Prozesse</v-tab>
+        <v-tab value="pending" class="tab">Pending Processes</v-tab>
+        <v-tab value="done" class="tab">Finished Processes</v-tab>
+        <v-tab value="all" class="tab">All Processes</v-tab>
       </v-tabs>
 
       <v-text-field

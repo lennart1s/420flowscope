@@ -6,13 +6,13 @@
       color="#CCCCCC"
       @click="startup"
     >
-      Frage?
+      Questions?
     </v-btn>
 
     <v-card v-show="showDialog" class="card text-right">
       <div ref="capture" class="capture"></div>
       <v-btn @click="close" color="primary" right>
-        Abschicken
+        Send
       </v-btn>
     </v-card>
 
