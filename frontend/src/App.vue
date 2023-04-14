@@ -39,9 +39,10 @@
     <v-main color="rgb(255, 255, 255, 0.88)">
       <router-view/>
     </v-main>
-  </v-app>
+
   <ApplicationForm name="Baugenehmigung"
     :data="array" style="display: flex; justify-content: center"/>
+  </v-app>
 </template>
 
 <script>
@@ -59,24 +60,6 @@ export default {
         dependentOn: '',
       },
       {
-        type: 'String',
-        name: 'Name',
-        required: true,
-        dependentOn: 'Antrag für jemand anderen',
-      },
-      {
-        type: 'file',
-        name: 'Name',
-        required: true,
-        dependentOn: 'Antrag für jemand anderen',
-      },
-      {
-        type: 'String',
-        name: 'Firma',
-        required: true,
-        dependentOn: '',
-      },
-      {
         type: 'date',
         name: 'Datum des Vorfalls',
         required: false,
@@ -89,16 +72,46 @@ export default {
         dependentOn: '',
       },
       {
+        type: 'Headline',
+        name: 'Adresse geschädigter',
+        required: false,
+        dependentOn: 'Antrag für jemand anderen',
+      },
+      {
         type: 'String',
         name: 'Vorname',
         required: true,
         dependentOn: 'Antrag für jemand anderen',
       },
       {
-        type: 'date',
-        name: 'vorraussichtliches Enddatum',
+        type: 'String',
+        name: 'Nachname',
+        required: true,
+        dependentOn: 'Antrag für jemand anderen',
+      },
+      {
+        type: 'String',
+        name: 'Straße und Hausnummer',
+        required: true,
+        dependentOn: 'Antrag für jemand anderen',
+      },
+      {
+        type: 'number',
+        name: 'Postleitzahl',
+        required: true,
+        dependentOn: 'Antrag für jemand anderen',
+      },
+      {
+        type: 'String',
+        name: 'Firma',
         required: true,
         dependentOn: '',
+      },
+      {
+        type: 'file',
+        name: 'Name',
+        required: true,
+        dependentOn: 'Antrag für jemand anderen',
       },
     ],
   }),
