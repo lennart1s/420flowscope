@@ -5,21 +5,21 @@
     large
     @click="openProcess"
   >
-    <span>
+    <span style="width: 30% !important; text-align: left !important;">
       {{ this.process.name }}
     </span>
     <v-divider
       class="mx-4"
       vertical
     />
-    <span>
+    <span style="width: 30% !important; text-align: left;">
       {{privyText}}
     </span>
     <v-divider
       class="mx-4"
       vertical
     />
-    <span style="color:grey">
+    <span style="color: grey;">
       {{ this.process.date }}
     </span>
     <v-spacer/>
@@ -41,13 +41,13 @@ export default {
   }),
   computed: {
     color() {
+      console.log('date', this.process.date);
       return this.notifications === '0' ? 'grey' : 'red';
     },
     privyText() {
       return this.process.privies.map((privy) => privy.name).join(', ');
     },
     notifications() {
-      // if not turned into string, the badge will render no text.
       return this.process.step - this.previousStatus;
     },
   },

@@ -6,7 +6,7 @@
       <v-list-item-action>
         <v-text-field
           class="text-h6"
-          label="Suche..."
+          label="Search..."
           v-model="search"
           @input="filterProcesses()"
           prepend-icon="mdi-magnify"
