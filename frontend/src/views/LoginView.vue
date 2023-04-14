@@ -1,33 +1,50 @@
 <template>
   <div class="wrapper">
-    <v-card :class="['card', {'valid': valid}]">
+    <v-card :class="['card', {'valid': valid}]" outlined>
+      <h2 class="mx-4 mt-4">
+        Welcome to 420FlowScope!
+      </h2>
       <v-form>
-       <v-container>
-         <v-col>
-           <v-text-field
-             v-model="email"
-             label="E-mail"
-             required
-             @input="valid = true"
-           ></v-text-field>
-         </v-col>
-         <v-col>
-           <v-text-field
-             v-model="password"
-             label="Password"
-             required
-             type="password"
-             @input="valid = true"
-           ></v-text-field>
-         </v-col>
-       </v-container>
+       <v-container class="mt-8">
+          <v-text-field
+            v-model="email"
+            label="E-mail"
+            required
+            @input="valid = true"
+            outlined
+          />
+          <v-text-field
+            outlined
+            v-model="password"
+            label="Password"
+            required
+            type="password"
+            @input="valid = true"
+          />
+          <v-btn
+            class="text-none xxx"
+            text
+            color="primary"
+            plain
+          >
+            <u>
+              forgot password?
+            </u>
+          </v-btn>
+        </v-container>
 
      </v-form>
        <v-container md="3" style="display: flex; justify-content: center; margin-bottom: ">
-         <v-btn
-         @click="submit()">
-           Log in
-         </v-btn>
+        <v-row class="mb-4 mx-6">
+          <v-spacer/>
+          <v-btn
+            elevation="2"
+            color="blue"
+            @click="submit()"
+          >
+            Log in
+          </v-btn>
+        </v-row>
        </v-container>
       </v-card>
   </div>
@@ -75,5 +92,8 @@ export default {
   border: 2px grey solid
   &&:not(.valid)
     border-color: red
+
+.xxx
+  margin-top: -3em !important
 
 </style>

@@ -2,13 +2,12 @@
   <v-container>
     <v-row>
       <v-spacer/>
-      <v-card class="mt-8 px-8" width="30% " color="rgba(255, 255, 255, 0.9)">
-        <v-container>
+      <v-card class="mt-8 px-8" width="40% " color="rgba(255, 255, 255, 0.9)">
+        <h1 class="mt-4">Your Profile</h1>
+        <v-container class="mt-6">
           <v-row>
             <v-spacer/>
-            <!-- <v-btn disabled fab outlined color="grey" x-large> -->
             <v-icon size="100"> mdi-account </v-icon>
-            <!-- </v-btn> -->
             <v-spacer/>
           </v-row>
           <v-row>
@@ -16,16 +15,18 @@
             {{ `${profile['firstname']} ${profile['lastname']}` }}
             <v-spacer/>
           </v-row>
-          <profile-value
-            v-for="valueName in
-              ['email', 'birthday', 'personnel number', 'street', 'house number', 'zip code']"
-            :key="valueName"
-            :value-name="capitalizeSentence(valueName)"
-            :value="profile[valueName]"
-          />
+          <v-container class="mt-10">
+            <profile-value
+              v-for="valueName in
+                ['email', 'birthday', 'personnel number', 'street', 'house number', 'zip code']"
+              :key="valueName"
+              :value-name="capitalizeSentence(valueName)"
+              :value="profile[valueName]"
+            />
+          </v-container>
         <v-row>
         <v-spacer/>
-        <v-btn class="mt-4 mb-4" outlined color="indigo">
+        <v-btn class="mt-10 mb-4" outlined color="indigo">
           Connect BID
         </v-btn>
         </v-row>
