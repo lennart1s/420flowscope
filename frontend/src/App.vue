@@ -46,7 +46,6 @@
 
 export default {
   name: 'App',
-
   data: () => ({
   }),
 };
@@ -54,6 +53,7 @@ export default {
 
 <style>
 #app {
-  background-image: linear-gradient(rgba(0, 0, 100, 255) , white);
+  background-image: url('./assets/stacked-waves-haikei.svg');
+  background-size: cover;
 }
 </style>
