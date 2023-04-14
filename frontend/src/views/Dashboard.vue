@@ -12,6 +12,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 import CardList from '../components/CardList.vue';
 
 export default {
