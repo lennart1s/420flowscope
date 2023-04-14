@@ -7,34 +7,36 @@
      :key="`${entry.name}-${idx}`"
      v-for="entry, idx in data">
         <v-text-field
-          :class="'posDep ^'+entry.dependentOn+'_ '"
+          :class="'posDep ^'+entry.dependentOn+'_ hiddenElem'"
           v-if="entry.type === 'String'"
           :label="entry.name"
           :required="entry.required"
-          :style="{'display: ': false ? 'none' : 'block'}"
         >
         </v-text-field>
 
       <v-file-input
-        :class="'posDep ^'+entry.dependentOn+'_ '"
+        :class="'posDep ^'+entry.dependentOn+'_ hiddenElem'"
         v-if="entry.type.indexOf('file-') > -1"
         :accept="entry.type.replace('file-','')+'/*'"
         :label="entry.name"
+        multiple
+        show-size
       ></v-file-input>
 
       <v-text-field
-        :class="'posDep ^'+entry.dependentOn+'_ '"
+        :class="'posDep ^'+entry.dependentOn+'_ hiddenElem'"
         v-if="entry.type === 'number'"
         :label="entry.name"
         :required="entry.required"
       ></v-text-field>
 
-      <v-col style="text-align: center" :class="'posDep ^'+entry.dependentOn+'_'"
+      <v-col style="text-align: center"
+      :class="'posDep ^'+entry.dependentOn+'_ hiddenElem'"
       v-if="entry.type === 'Headline'">
         <p style="text-align: center">{{ entry.name }}</p>
       </v-col>
-      <v-col :class="'posDep ^'+entry.dependentOn+'_'" v-if="entry.type === 'date'"
-      :style="{'display': entry.dependentOn.length>1 ? 'none' : 'block'}">
+      <v-col :class="'posDep ^'+entry.dependentOn+'_ hiddenElem'"
+      v-if="entry.type === 'date'">
         <p>{{ entry.name }}</p>
         <v-date-picker :label="entry.name"></v-date-picker>
       </v-col>
@@ -65,11 +67,11 @@ export default {
   methods: {
     isChecked(dependentOn) {
       if (dependentOn === null || dependentOn === '') {
-        return true;
+        return false;
       }
       const box = document.getElementById(dependentOn);
       if (box === null || box.ariaChecked === null) {
-        return true;
+        return false;
       }
       return box.ariaChecked;
     },
@@ -79,8 +81,10 @@ export default {
       for (let i = 0; i < array.length; i += 1) {
         console.log(i);
         const e = array[i];
+        e.className = e.className.replace('hiddenElem', '');
         const c = e.className;
         const b = this.isChecked(c.substring(c.indexOf('^') + 1, c.indexOf('_')));
+        console.log(b);
         if (b !== 'false' && b) {
           if (e != null && e !== undefined) {
             e.style.display = 'none';
@@ -101,5 +105,8 @@ export default {
 <style scoped>
 .flexCon{
   display: flex; flex-direction: column
+}
+.hiddenElem{
+  display: 'none';
 }
 </style>

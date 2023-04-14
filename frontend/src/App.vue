@@ -108,10 +108,10 @@ export default {
         dependentOn: '',
       },
       {
-        type: 'file',
-        name: 'Name',
+        type: 'file-',
+        name: 'Laden Sie hier Ihre Dokumente hoch',
         required: true,
-        dependentOn: 'Antrag für jemand anderen',
+        dependentOn: '',
       },
     ],
   }),
