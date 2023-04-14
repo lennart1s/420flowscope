@@ -8,6 +8,15 @@
       <!-- ggf noch loading icon + skeleton loading-->
       <v-btn class="text-h6" plain to="/">420flowscope</v-btn>
       <v-spacer></v-spacer>
+      <v-btn
+        elevation="2"
+        icon
+        right
+        color="warning"
+        to="/add"
+      >
+        <v-icon>mdi-plus</v-icon>
+      </v-btn>
       <v-menu>
         <template v-slot:activator="{ on, attrs }">
           <v-btn
@@ -46,8 +55,6 @@
 </template>
 
 <script>
-import ApplicationForm from '@/components/ApplicationForm.vue';
-
 export default {
   name: 'App',
 
@@ -115,9 +122,6 @@ export default {
       },
     ],
   }),
-  components: {
-    ApplicationForm,
-  },
 };
 </script>
 
