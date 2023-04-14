@@ -3,6 +3,7 @@
     "id": "1",
     "type": "arbitration",
     "name": "Kompensation: Flugausfall MH370/MAS370",
+    "date": "2023-04-14",
     "privies": [
       {
         "id": "max.mustermann@mail.de",
@@ -52,15 +53,18 @@
   {
     "id": "2",
     "type": "arbitration",
-    "name": "Kompensation: awawda",
+    "name": "Kompensation: Waschmaschinenlieferung",
+    "date": "2023-04-13",
     "privies": [
       {
         "id": "max.mustermann@mail.de",
-        "role": "applicant"
+        "role": "applicant",
+        "name": "Maximilian Mustermann"
       },
       {
         "id": "lawfirm@mail.de",
-        "role": "company"
+        "role": "company",
+        "name": "Andre Geldgeil"
       }
     ],
     "num_steps": 5,

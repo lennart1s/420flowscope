@@ -2,10 +2,10 @@
   <v-container fluid style="margin-top: 30px">
     <!--<v-list color="rgb(255, 255, 255, 0)">
       <v-list-item color="rgb(255, 255, 255, 0.88)">
-        <CardList stage="pending" title="Offene Prozesse"></CardList>
+        <CardList stage="pending" title="Pending Processes"></CardList>
       </v-list-item>
       <v-list-item color="rgb(255, 255, 255, 0.88)">
-        <CardList stage="done" title="Beendete Prozesse"></CardList>
+        <CardList stage="done" title="Finished Processes"></CardList>
       </v-list-item>
     </v-list>-->
     <v-card style="padding: 10px 20px 20px 20px">
