@@ -1,6 +1,6 @@
 <template>
   <v-btn
-    class="text-none btn"
+    class="text-none"
     block
     large
     @click="openProcess"
@@ -62,7 +62,9 @@ export default {
 };
 </script>
 
-<style lang="stylus" scoped>
-.btn
-  margin-block: 3px !important
+<style>
+.process-date {
+  color: grey;
+  float: right !important;
+}
 </style>

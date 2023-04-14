@@ -38,21 +38,14 @@
     </v-app-bar>
     <v-main color="rgb(255, 255, 255, 0.88)">
       <router-view/>
-      <MagicHelper></MagicHelper>
     </v-main>
   </v-app>
 </template>
 
 <script>
-import MagicHelper from './components/MagicHelper.vue';
 
 export default {
   name: 'App',
-
-  components: {
-    MagicHelper,
-  },
-
   data: () => ({
   }),
 };
