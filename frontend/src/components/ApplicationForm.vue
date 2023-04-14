@@ -1,11 +1,24 @@
 <template>
   <v-container class="flexCon">
-    <p>{{ name }}</p>
+    <p style="text-align: center; color: rgb(65,62,56); font-size: 22px">{{ name }}</p>
 
     <v-container
 
      :key="`${entry.name}-${idx}`"
      v-for="entry, idx in data">
+
+        <v-container fluid
+          :class="'posDep'"
+          v-if="showEl(entry.dependentOn) && entry.type === 'TextArea'"
+
+          :required="entry.required">
+          <v-textarea
+            name="input-7-1"
+            filled
+            :label="entry.name"
+            auto-grow
+          ></v-textarea>
+        </v-container>
         <v-text-field
           :class="'posDep'"
           v-if="showEl(entry.dependentOn) && entry.type === 'String'"

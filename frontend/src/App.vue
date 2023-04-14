@@ -40,7 +40,7 @@
       <router-view/>
     </v-main>
 
-  <ApplicationForm name="Baugenehmigung"
+  <ApplicationForm name="Verbraucherschlichtungsprozess"
     :data="array" style="display: flex; justify-content: center"/>
   </v-app>
 </template>
@@ -54,7 +54,7 @@ export default {
   data: () => ({
     array: [
       {
-        type: 'String',
+        type: 'TextArea',
         name: 'kurze Beschreibung des Vorfalls',
         required: true,
         dependentOn: '',
@@ -109,7 +109,7 @@ export default {
       },
       {
         type: 'file-',
-        name: 'Laden Sie hier Ihre Dokumente hoch',
+        name: 'Laden Sie Dokumente hoch, die zum Verständnis des Falls beitragen',
         required: true,
         dependentOn: '',
       },
